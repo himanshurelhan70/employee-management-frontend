@@ -21,7 +21,7 @@ function App() {
   const createEmployee = async (formData) => {
     if (mode === "create") {
       try {
-        const response = await fetch("http://localhost:4000/api/v1/addEmp", {
+        const response = await fetch("https://employee-management-wbvn.onrender.com/api/v1/addEmp", {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
@@ -41,7 +41,7 @@ function App() {
     }
     else if(mode === 'update'){
       try {
-        const response = await fetch(`http://localhost:4000/api/v1/updateEmp/${formData.id}`, {
+        const response = await fetch(`https://employee-management-wbvn.onrender.com/api/v1/updateEmp/${formData.id}`, {
           method: "PUT",
           headers: {
             "Content-Type": "application/json",
@@ -66,7 +66,7 @@ function App() {
   const deleteEmployee = async (id) => {
     try {
       const response = await fetch(
-        `http://localhost:4000/api/v1/deleteEmp/${id}`,
+        `https://employee-management-wbvn.onrender.com/api/v1/deleteEmp/${id}`,
         {
           method: "DELETE",
           headers: {
@@ -101,7 +101,7 @@ function App() {
   // fetch all employees from database
   const fetchEmployees = async () => {
     try {
-      const response = await fetch("http://localhost:4000/api/v1/getEmps");
+      const response = await fetch("https://employee-management-wbvn.onrender.com/api/v1/getEmps");
       const { data } = await response.json();
       console.log(data);
       setAllEmpsData(data);
